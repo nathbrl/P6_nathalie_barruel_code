@@ -5,7 +5,7 @@ exports.createSauce = (req, res, next) => {
     delete sauceObject._id;
     const sauce = new Sauce({
         //title: req.body.title,
-        ...thingObject, // opérateur spread JS = ...
+        ...sauceObject, // opérateur spread JS = ...
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     });
     sauce.save()
